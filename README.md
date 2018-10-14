@@ -4,7 +4,7 @@
 
 A site template for projects that uses Jekyll and Bootstrap, and can be hosted on GitHub pages. This template is mobile friendly.
 
-![Site preview](_site/assets/img/screenshot.png)
+![Site preview](assets/img/screenshot.png)
 
 ## Setup
 
