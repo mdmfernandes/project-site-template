@@ -1,0 +1,70 @@
+<footer class="site-footer" style="background-color: #fafafa;">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="container">
+    <div class="row d-flex text-center justify-content-center my-3">
+      {% if site.author_website %}
+      <div class="col-md-3">
+        <a class="text-uppercase font-weight-bold align-middle text-dark" href="{{ site.author_website }}" target="_blank">My Website</a>
+      </div>
+      {% endif %}
+      {% if site.author_projects or site.github_username %}
+      <div class="col-md-3">
+          <a class="text-uppercase font-weight-bold align-middle text-dark" href="{% if site.author_projects %}{{ site.author_projects }}{% else %}https://github.com/{{ site.github_username }}{% endif %}" target="_blank">My Projects</a>
+      </div>
+      {% endif %}
+      <div class="col-md-3">
+          <a class="text-uppercase font-weight-bold align-middle text-dark" href="mailto:{{ site.author_email }}" target="_blank">Contact me</a>
+      </div>
+    </div>
+
+    <hr class="footer-rule">
+
+    <div class="row d-flex text-center justify-content-center">
+      <div class="col-md-8 mt-3">
+        <p style="line-height: 1.5rem">{{ site.footer_description }}</p>
+      </div>
+    </div>
+    <!-- Only show in mobile-->
+    <hr class="clearfix d-md-none footer-rule mb-3">
+
+    <div class="row pt-md-1">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center mb-3">
+          {% if site.twitter_username %}
+          <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">
+            <i class="fab fa-twitter fa-2x text-dark mx-4"></i>
+          </a>
+          {% endif %}
+          {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" target="_blank">
+            <i class="fab fa-github fa-2x text-dark mx-4"></i>
+          </a>
+          {% endif %}
+          {% if site.instagram_username %}
+          <a href="https://www.instagram.com/{{ site.instagram_username }}" target="_blank">
+            <i class="fab fa-instagram fa-2x text-dark mx-4"></i>
+          </a>
+          {% endif %}
+          {% if site.linkedin_username %}
+          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank">
+            <i class="fab fa-linkedin fa-2x text-dark mx-4"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="background-color: #eee;">
+    <i class="far fa-copyright" style="font-size: 0.9rem"></i> 2018  <b>{{ site.author | escape}}</b></a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{{ "assets/highlight/highlight.pack.js" | relative_url }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="{{ "assets/js/main.js" | relative_url }}"></script>

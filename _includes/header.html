@@ -1,0 +1,20 @@
+<header id="pageHeader" class="page-header {% if page.layout == "home" %}d-flex{% else %}d-lg-flex d-none{% endif %}" role="banner">
+  <!-- Photo by Thomas Tastet on Unsplash -->
+  <div class="container">
+    <div id="textHeader">
+      <h1 class="text-uppercase">{{ site.title | escape }}</h1>
+      <p class="lead d-none d-md-block">{{ site.description | escape }}</p>
+    </div>
+    <div class="d-lg-flex d-none justify-content-center btn-jumbo">
+      <a id="btn-github" class="btn btn-lg btn-outline-light text-light" role="button" href="https://github.com/{{ site.github_username }}/{{ site.acronym_lower }}"  target="_blank">
+        <i class="fab fa-github"></i>Check on Github
+      </a>
+      <a id="btn-zip" class="btn btn-lg btn-outline-light text-light" role="button" href="https://github.com/{{ site.github_username }}/{{ site.acronym_lower }}/archive/{{ site.version }}.zip">
+        <i class="far fa-file-archive"></i>Download .zip
+      </a>
+      <a id="btn-tar" class="btn btn-lg btn-outline-light text-light" role="button" href="https://github.com/{{ site.github_username }}/{{ site.acronym_lower }}/archive/{{ site.version }}.tar.gz">
+        <i class="far fa-file-archive"></i>Download .tar.gz
+      </a>
+    </div>
+  </div>
+</header>

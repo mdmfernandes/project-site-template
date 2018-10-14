@@ -1,0 +1,106 @@
+<nav  id="mainNav" class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container pl-md-3">
+    <a id="siteAcronym" class="navbar-brand d-lg-none text-uppercase" href="{{ "/" | relative_url }}">{{ site.acronym }}</a>
+    <div class="flex-md-row">
+      <button id="togglerBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-chevron-circle-down" style="margin-right: 4px;"></i>
+        {% if page.collection %}
+          {{ page.collection }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+      </button>
+
+      
+    </div>
+
+    
+    
+    <div  id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav" id="sitePages">
+        <li class="nav-item  {% if page.layout == "home" %}active{% endif %}">
+          <a class="nav-link upper-text" style="white-space: nowrap;"
+            href="{{ "/" | relative_url }}">Project Home
+          </a>
+        </li>
+        {% for path in site.header_pages %}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {% if my_page.title %}
+            {%- assign my_pname = my_page.name  | remove: '.md' -%}
+
+        <li class="nav-item justify-content-center">
+          <!-- the btn-group is to group the button and the split -->
+          <div class="btn-group">
+            <a class="nav-link btn-drop upper-text {% if page.collection == my_pname or page.name == my_page.name %}active{% endif %}" href="{{ my_page.url | relative_url }}">
+              {{ my_page.title | escape }}
+            </a>
+            <a id="navbarDropdown{{ my_page.title | remove: " " }}" class="nav-link {% if page.collection == my_pname or page.name == my_page.name %}active{% endif %}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+              <i class="far fa-caret-square-down align-middle" style="margin-top: 1px;"></i>
+            </a>
+            <div class="dropdown-wrapper">
+              <div id="dropMenu{{ my_page.title | remove: " " }}" class="dropdown-menu" aria-labelledby="navbarDropdown{{ my_page.title | remove: " " }}">
+                        
+                  {%for member in site[my_pname] %}
+                  <a class="dropdown-item" href="{{ member.url | relative_url}}">{{ member.short_title | escape }}</a>
+                  {% endfor %}
+              </div>
+            </div>
+          </div>
+        </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <hr>
+    
+      <div class="d-lg-none d-flex flex-column flex-sm-row justify-content-center btn-jumbo">
+        <a id="btn-github" class="btn btn-outline-light text-light" role="button" href="https://github.com/{{ site.github_username }}/{{ site.acronym_lower }}"
+          target="_blank">
+          <i class="fab fa-github"></i>Check on Github
+        </a>
+        <a id="btn-zip" class="btn btn-outline-light text-light" role="button" href="https://github.com/{{ site.github_username }}/{{ site.acronym_lower }}/archive/{{ site.version }}.zip">
+          <i class="far fa-file-archive"></i>Download .zip
+        </a>
+        <a id="btn-tar" class="btn btn-outline-light text-light" role="button" href="https://github.com/{{ site.github_username }}/{{ site.acronym_lower }}/archive/{{ site.version }}.tar.gz">
+          <i class="far fa-file-archive"></i>Download .tar.gz
+        </a>
+      </div>
+
+      <hr>
+
+      <ul class="navbar-nav flex-row justify-content-around" id="btnSocial">
+        {% if site.author_website %}
+        <a class="nav-item nav-link" href="{{ site.author_website }}" target="_blank" data-toggle="tooltip"
+          data-placement="bottom" title="Check my Website">
+          <i class="fas fa-lg fa-globe"></i>
+        </a>
+        {% endif %}
+        {% if site.twitter_username %}
+        <a class="nav-item nav-link" href="https://twitter.com/{{ site.twitter_username }}" target="_blank" data-toggle="tooltip"
+          data-placement="bottom" title="Follow me on Twitter">
+          <i class="fab fa-lg fa-twitter"></i>
+        </a>
+        {% endif %}
+        {% if site.github_username %}
+        <a class="nav-item nav-link" href="https://github.com/{{ site.github_username }}" target="_blank" data-toggle="tooltip"
+          data-placement="bottom" title="Check my Github">
+          <i class="fab fa-lg fa-github"></i>
+        </a>
+        {% endif %}
+        {% if site.instagram_username %}
+        <a class="nav-item nav-link" href="https://www.instagram.com/{{ site.instagram_username }}" target="_blank"
+          data-toggle="tooltip" data-placement="bottom" title="Follow me on Instagram">
+          <i class="fab fa-lg fa-instagram"></i>
+        </a>
+        {% endif %}
+        {% if site.linkedin_username %}
+        <a class="nav-item nav-link" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank"
+          data-toggle="tooltip" data-placement="bottom" title="Follow me on LinkedIn">
+          <i class="fab fa-lg fa-linkedin"></i>
+        </a>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

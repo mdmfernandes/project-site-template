@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+    {%- include navbar.html -%}
+    {%- include header.html -%}
+
+
+    <button onclick="topFunction()" id="topBtn" class="d-lg-none" title="Go to top"><i class="fas fa-2x fa-arrow-up"></i></button>
+    
+    <div class="{% if page.toc %}container-fluid{% else %}container{% endif %}">
+      <div class="row">
+        {% if page.toc %}
+        <nav id="sideBar" class="col-lg-3 col-xl-2 d-none d-lg-block bg-light">
+            <h4 class="mt-3">Table of Contents</h4>
+            <div id="sidebarContent" class="mt-3 mb-5" style="position:sticky;">
+              
+            </div>
+        </nav>
+        {% endif %}
+        <main class="col {% if page.toc %}col-lg-9 col-xl-9 ml-lg-auto px-md-4{% endif %} {% if page.layout != "home" %}mt-6{% endif %} mt-lg-3" role="main" aria-label="Content">
+            {{ content }}
+        </main>
+        {% if page.toc %}   
+        <div class="col-xl-1"></div>
+        {% endif %}
+      </div>
+    </div>
+
+    {%- include footer.html -%}
+
+  </body>
+</html>
