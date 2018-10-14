@@ -5,7 +5,7 @@
 title: Project site template
 # Project
 acronym: PST
-acronym_lower: pst
+acronym_lower: project-site-template
 version: v0.1.0
 description: >- # this means to ignore newlines until the next parameter
   PST is a site template for projects that uses Jekyll and Bootstrap, and can be hosted on GitHub pages.

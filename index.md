@@ -35,7 +35,7 @@ Nullam iaculis ante tristique laoreet venenatis. Pellentesque auctor elementum m
 
 ## Versioning
 
-We use [SemVer](http://semver.org/){:target="_blank"} for versioning. For the versions available, see the [releases on the project repository](https://github.com/mdmfernandes/project-site-template/releases/){:target="_blank"}.
+We use [SemVer](http://semver.org/){:target="_blank"} for versioning. For the versions available, see the [releases on the project repository](https://github.com/mdmfernandes/{{ site.acronym_lower }}/releases/){:target="_blank"}.
 
 ## Authors
 
@@ -43,7 +43,7 @@ We use [SemVer](http://semver.org/){:target="_blank"} for versioning. For the ve
 
 ## License
 
-This project is licensed under the MIT License - see the project [LICENSE](https://github.com/mdmfernandes/project-site-template/blob/master/LICENSE){:target="_blank"} file for details.
+This project is licensed under the MIT License - see the project [LICENSE](https://github.com/mdmfernandes/{{ site.acronym_lower }}/blob/master/LICENSE){:target="_blank"} file for details.
 
 ## Acknowledgments
 

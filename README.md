@@ -2,9 +2,10 @@
 
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A site template for projects that uses Jekyll and Bootstrap, and can be hosted on GitHub pages. This template is mobile friendly.
+A site template for projects that uses Jekyll and Bootstrap, and can be hosted on GitHub pages. This template is mobile friendly. You can try the website [here](https://mdmfernandes.github.io/project-site-template/).
 
 ![Site preview](assets/img/screenshot.png)
+
 
 ## Setup
 
