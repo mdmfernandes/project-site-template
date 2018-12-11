@@ -6,7 +6,6 @@ A site template for projects that uses Jekyll and Bootstrap, and can be hosted o
 
 ![Site preview](assets/img/screenshot.png)
 
-
 ## Setup
 
 1. Clone the project.
